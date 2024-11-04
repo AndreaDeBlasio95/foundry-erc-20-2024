@@ -1,74 +1,78 @@
-## Foundry
+# OurToken Project
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Welcome to the **OurToken Project**, a simple ERC20 token implementation using the Foundry development environment and OpenZeppelin contracts. This repository provides a basic setup to get you started with smart contract development, testing, and deployment.
 
-Foundry consists of:
+## Project Organization
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+This repository follows a standard structure provided by Foundry:
 
-## Documentation
+- **`src/`**: Contains the main Solidity contract files.
+  - `OurToken.sol`: The ERC20 token contract.
+- **`script/`**: Holds the deployment scripts.
+  - `DeployOurToken.s.sol`: Script to deploy the `OurToken` contract.
+- **`test/`**: Includes test files for smart contracts.
+  - `OurTokenTest.t.sol`: Unit tests for the `OurToken` contract.
 
-https://book.getfoundry.sh/
+## Getting Started
 
-## Usage
+### Prerequisites
 
-### Build
+Ensure you have the following installed on your system:
 
-```shell
-$ forge build
-```
+- **Foundry**: A blazing-fast, portable, and modular toolkit for Ethereum application development written in Rust.
 
-### Test
+### Installation
 
-```shell
-$ forge test
-```
+1. **Initialize Foundry**:
 
-### Format
+   ```bash
+   forge init
+   ```
 
-```shell
-$ forge fmt
-```
+2. **Install OpenZeppelin Contracts**:
+   ```bash
+   forge install openzeppelin/openzeppelin-contracts@v5.0.2 --no-commit
+   ```
 
-### Gas Snapshots
+### Commands
 
-```shell
-$ forge snapshot
-```
+Below are some of the common commands you will use in this repository:
 
-### Anvil
+- **Compile Contracts**:
 
-```shell
-$ anvil
-```
+  ```bash
+  forge build
+  ```
 
-### Deploy
+- **Run Tests**:
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+  ```bash
+  forge test
+  ```
 
-### Cast
+- **Deploy Contracts**:
+  Deployment is handled by the script in the `script/` directory. Use the following command to run the deployment script:
 
-```shell
-$ cast <subcommand>
-```
+  ```bash
+  forge script script/DeployOurToken.s.sol --broadcast
+  ```
 
-### Help
+- **Format Code**:
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+  ```bash
+  forge fmt
+  ```
 
-### Steps
+- **Lint Code**:
+  ```bash
+  forge fmt --check
+  ```
 
-forge init
+## References
 
-https://eips.ethereum.org/EIPS/eip-20
+- **ERC20 Standard**: Learn more about the ERC20 token standard [here](https://eips.ethereum.org/EIPS/eip-20).
+- **Foundry Documentation**: For more details on Foundry, visit the [Foundry Book](https://book.getfoundry.sh/).
 
-forge install openzeppelin/openzeppelin-contracts@v5.0.2 --no-commit
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
